@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Parpheniuk - UGC Rate Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: white;
+            margin: 0;
+            padding: 0;
+            width: 2400px;
+            height: 3200px;
+            transform-origin: top left;
+            zoom: 1;
+        }
+        
+        .container {
+            width: 2400px;
+            height: 3200px;
+            background: white;
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 200px;
+            gap: 120px;
+        }
+        
+        .profile-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+        
+        .header-text h1 {
+            font-size: 160px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: 6px;
+            text-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            color: white;
+        }
+        
+        .header-text .subtitle {
+            font-size: 64px;
+            font-weight: 600;
+            opacity: 0.95;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .main-content {
+            padding: 120px 100px;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 80px;
+            border-radius: 30px;
+            margin-bottom: 100px;
+        }
+        
+        .contact-section h3 {
+            font-size: 80px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .contact-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            font-size: 52px;
+            font-weight: 500;
+        }
+        
+        .contact-item .icon {
+            margin-right: 24px;
+            font-size: 56px;
+        }
+        
+        .rate-card-title {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+        
+        .rate-card-title h2 {
+            font-size: 144px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        
+        .rate-card-title .divider {
+            width: 800px;
+            height: 6px;
+            background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+            margin: 0 auto;
+            border-radius: 6px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
+        }
+        
+        .service-section {
+            background: #f7fafc;
+            border-radius: 30px;
+            border: 4px solid #e2e8f0;
+            overflow: hidden;
+        }
+        
+        .service-header {
+            padding: 30px 40px;
+            font-size: 72px;
+            font-weight: 600;
+            color: white;
+            text-align: center;
+        }
+        
+        .video-packages .service-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        
+        .amazon-reviews .service-header {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+        }
+        
+        .service-content {
+            padding: 60px;
+        }
+        
+        .package-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .package-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .package-info h3 {
+            font-size: 64px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .package-info .details {
+            font-size: 48px;
+            color: #718096;
+            line-height: 1.4;
+        }
+        
+        .package-price {
+            font-size: 64px;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .amazon-reviews .package-price {
+            color: #ff6b6b;
+        }
+        
+        .popular-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 24px;
+            font-size: 40px;
+            font-weight: 600;
+            margin-left: 20px;
+        }
+        
+        .retainer-note {
+            margin-top: 30px;
+            font-style: italic;
+            color: #6b7280;
+            font-size: 48px;
+        }
+        
+        .bundle-note {
+            margin-top: 30px;
+            color: #6b7280;
+            font-size: 48px;
+        }
+        
+        .enhancements {
+            background: #fff5f5;
+            border: 4px solid #fed7d7;
+            border-radius: 30px;
+            padding: 80px;
+            margin: 80px 0;
+        }
+        
+        .enhancements h3 {
+            text-align: center;
+            font-size: 96px;
+            font-weight: 700;
+            color: #c53030;
+            margin-bottom: 60px;
+        }
+        
+        .enhancements-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .enhancement-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .enhancement-item .name {
+            font-size: 56px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .enhancement-item .price {
+            font-size: 52px;
+            font-weight: 600;
+            color: #c53030;
+        }
+        
+        .bottom-section {
+            text-align: center;
+            padding: 80px;
+            background: #f7fafc;
+            border-radius: 30px;
+            border: 4px solid #e2e8f0;
+        }
+        
+        .bottom-section h3 {
+            color: #2d3748;
+            font-size: 80px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .bottom-section p {
+            color: #718096;
+            font-size: 56px;
+            margin-bottom: 60px;
+        }
+        
+        .qr-space {
+            height: 400px;
+            margin: 0 auto 40px;
+        }
+        
+        .bottom-section .cta {
+            color: #667eea;
+            font-size: 56px;
+            font-weight: 600;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile-image">
+                Your Photo
+            </div>
+            <div class="header-text">
+                <h1>JOE PARPHENIUK</h1>
+                <div class="subtitle">Content Creator & UGC Specialist</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="contact-section">
+                <h3>CONNECT WITH ME</h3>
+                
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span class="icon">📧</span>
+                        joep@internetmoneymedia.com
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📱</span>
+                        Instagram: @joeparpheniuk
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">🎵</span>
+                        TikTok: @joeparpheniuk
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">▶️</span>
+                        YouTube: @joeparpheniuk
+                    </div>
+                </div>
+            </div>
+
+            <div class="rate-card-title">
+                <h2>RATE CARD</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-section video-packages">
+                    <div class="service-header">VIDEO CONTENT PACKAGES</div>
+                    <div class="service-content">
+                        <div class="package-item">
+                            <div class="package-info">
+                                <h3>Single Video Production</h3>
+                                <div class="details">1 revision • Full usage rights</div>
+                            </div>
+                            <div class="package-price">$200</div>
+                        </div>
+                        
+                        <div class="package-item">
+                            <div class="package-info">
+                                <h3>Triple Pack Bundle</h3>
+                                <div class="details">3 videos • Mixed formats • Save $50 • Full usage rights</div>
+                            </div>
+                            <div class="package-price">$550</div>
+                        </div>
+                        
+                        <div class="package-item">
+                            <div class="package-info">
+                                <h3>Creator Pack <span class="popular-badge">POPULAR</span></h3>
+                                <div class="details">5 videos • Premium package • Save $200 • Full usage rights</div>
+                            </div>
+                            <div class="package-price">$800</div>
+                        </div>
+                        
+                        <div class="retainer-note">
+                            * Please inquire about monthly retainer options
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-section amazon-reviews">
+                    <div class="service-header">AMAZON REVIEW VIDEOS</div>
+                    <div class="service-content">
+                        <div class="package-item">
+                            <div class="package-info">
+                                <h3>Standard Review (30 sec)</h3>
+                                <div class="details">Perfect for detailed product showcases</div>
+                            </div>
+                            <div class="package-price">$50</div>
+                        </div>
+                        
+                        <div class="package-item">
+                            <div class="package-info">
+                                <h3>Extended Review (60 sec)</h3>
+                                <div class="details">Comprehensive features & benefits</div>
+                            </div>
+                            <div class="package-price">$90</div>
+                        </div>
+                        
+                        <div class="bundle-note">
+                            <strong>Bundle Discount Available:</strong><br>
+                            5+ product reviews = 20% savings
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="enhancements">
+                <h3>ENHANCEMENT ADD-ONS</h3>
+                <div class="enhancements-grid">
+                    <div class="enhancement-item">
+                        <span class="name">Additional Hook or CTA</span>
+                        <span class="price">$40</span>
+                    </div>
+                    <div class="enhancement-item">
+                        <span class="name">B-Roll Footage</span>
+                        <span class="price">$12/clip</span>
+                    </div>
+                    <div class="enhancement-item">
+                        <span class="name">Lifestyle Photography</span>
+                        <span class="price">$20/shot</span>
+                    </div>
+                    <div class="enhancement-item">
+                        <span class="name">Monthly Retainer</span>
+                        <span class="price">Inquire</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bottom-section">
+                    <h3 style="color: #2d3748; font-size: 80px; font-weight: 700; margin-bottom: 20px;">Ready to create something amazing?</h3>
+                    <p style="color: #718096; font-size: 56px; margin-bottom: 60px;">Scan below to see my previous work!</p>
+                    
+                    <div style="height: 400px; margin: 0 auto 40px;"></div>
+                    
+                    <p style="color: #667eea; font-size: 56px; font-weight: 600; margin: 0;">👆 See the results!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
